@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing Game</title>
+</head>
+<body>
+    <h1>I am thinking of a number between 1 and 10. Try to guess the number</h1>
+
+    <form onsubmit="handleSubmit(event)">
+        <label for="username">Name</label><br>
+        <input type="text" id="username" required><br><br>
+
+        <label for="number">Number</label><br>
+        <input type="number" id="number" required min="1" max="10"><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+
+            // Get the values from form fields
+            const username = document.getElementById('username').value;
+            const number = document.getElementById('number').value;
+
+            // Redirect to the server route with username and number as URL path and query parameter
+            window.location.href = `/${encodeURIComponent(username)}?num=${encodeURIComponent(number)}`;
+        }
+    </script>
+</body>
+</html>
