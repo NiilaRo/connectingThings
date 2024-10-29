@@ -1,3 +1,3 @@
-Install Node
-npm init -y
-npm install express
+1. Install Node
+2. npm init -y
+3. npm install express
